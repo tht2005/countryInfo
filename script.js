@@ -54,7 +54,7 @@ async function genList() {
             if(regionFilter.innerText == 'Filter by Region' || regionFilter.innerText == 'All region' || regionFilter.innerText == d.region) {
                 dataOutputContainer.innerHTML += `
                 <div class="country-info" cca3="${d.cca3}">
-                    <!-- <img src="${d.flags.svg}"> -->
+                    <img src="${d.flags.svg}">
                     <div class="info-container">
                         <div class="country-name">${d.name.common}</div>
                         <div class="other-info-container">
