@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+:root {
+    --element-color: hsl(209, 23%, 22%);
+    --bg-color: hsl(209, 26%, 17%);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+body, header {
+    padding: 0 clamp(1%, 7%, 10%);
+}
+body {
+    margin-top: 12vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background: var(--element-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+#header-text {
+    font-size: 120%;
+    font-weight: 600;
+}
+
+#scene-change-button {
+    font-size: 12px;
+}
+#scene-change-button:hover {
+    cursor: pointer;
+}
+#scene-change-button > svg {
+    width: 15px;
+    stroke: var(--text-color);
+    fill: white;
+}
+
+#web-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 25px;
+}
+.country-info {
+    --country-info-width: 250px;
+    width: var(--country-info-width);
+    border-radius: 2%;
+    background: var(--element-color);
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.country-info > img {
+    width: 100%;
+}
+.country-info:hover {
+    cursor: pointer;
+}
+.info-container {
+    padding: 10%;
+}
+.country-name {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.other-info-container {
+    margin-bottom: 20px;
+}
+.other-info {
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 20px;
+}
+.other-info > span {
+    font-weight: 600;
+}
+
+#filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin: 30px 0;
+}
+
+#selectBox {
+    height: 100%;
+    width: 170px;
+    background: var(--element-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 0 15px;
+    position: relative;
+}
+#selectBox:hover {
+    cursor: pointer;
+}
+#option-container {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    background: var(--element-color);
+    display: none;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+.option {
+    margin: 5px 0;
+}
+.option:hover {
+    cursor: pointer;
+}
+#selectBox, #option-container {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+#selectBox:focus > #option-container {
+    display: block;
+}
+
+#searchBox {
+    height: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--element-color);
+    display: flex;
+    align-items: center;
+}
+input {
+    height: 100%;
+    width: 300px;
+    outline: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: var(--text-color);
+    font-size: 12px;
+    padding: 0 10px;
+}
+input::placeholder {
+    color: var(--text-color);
+}
+
+#searchBox > ion-icon {
+    padding-left: 30px;
+}
+
+#country-expand-info {
+    padding: 0 5%;
+    position: fixed;
+    inset: 0; top: 10vh;
+    background: var(--bg-color);
+    display: none;
+    z-index: 1;
+}
+
+#back-button {
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    background: var(--element-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 30px;
+}
+#back-button:hover {
+    cursor: pointer;
+}
+
+#content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+#content > img {
+    width: 70%;
+}
+#content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#content .country-name {
+    font-size: 20px;
+    font-weight: 800;
+}
+.more-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.more-info > div {
+    font-size: 12px;
+    font-weight: 100;
+}
+.more-info > div > span {
+    font-weight: 400;
+}
+.borders > span {
+    font-size: 12px;
+    font-weight: 400;
+}
+.borders > div {
+    font-size: 10px;
+    font-weight: 200;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.borders > div > div {
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 15px;
+    background: var(--element-color);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.circle {
+    transition: all 300ms cubic-bezier(.5,.77,1,.88);
+    --ani_t: 4s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--element-color);
+
+    box-shadow: 6px 6px 6px 0 rgba(0, 0, 0, 0.3);
+
+    transform: translate(-50%, -50%) scale(0, 0);
+}
+
+.circle:nth-child(1) {
+    width: 100px;
+    animation: a1 var(--ani_t) infinite;
+}
+.circle:nth-child(2) {
+    width: 65px;
+    animation: a2 var(--ani_t) infinite;
+}
+.circle:nth-child(3) {
+    width: 30px;
+    animation: a3 var(--ani_t) infinite;
+}
+
+@keyframes a1 {
+    20%, 70% {
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+    90% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+}
+@keyframes a2 {
+    10% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+    30%, 60% {
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+}
+@keyframes a3 {
+    20% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+    40%, 50% {
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+}
+
+#loading-screen {
+    position: fixed;
+    inset: 0; top: 10vh;
+    background: var(--bg-color);
+    display: none;
+    z-index: 1;
+}
